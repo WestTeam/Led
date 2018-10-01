@@ -1,0 +1,21 @@
+// Copyright (c) 2018 All Rights Reserved WestBot
+
+syntax = "proto3";
+
+package WestBot;
+
+service Led {
+    rpc turnOn( LedRequest ) returns( LedReply );
+    rpc turnOff( LedRequest ) returns( LedReply );
+}
+
+message LedRequest {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message LedReply {
+    uint32 id = 1;
+    bool status = 2;
+    string errorString = 3;
+}
